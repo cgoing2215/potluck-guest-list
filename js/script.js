@@ -22,6 +22,16 @@ addGuestButton.addEventListener("click", function () {
     }
 });
 
+document.addEventListener('keydown', function (e){
+    const guest = guestInput.value;
+    if (e.key === 'Enter'){
+        if (guest !== ""){
+            addToList(guest);
+            updateGuestCount();
+            clearInput();
+    };
+}});
+
 const clearInput = function () {
     guestInput.value = "";
 };
